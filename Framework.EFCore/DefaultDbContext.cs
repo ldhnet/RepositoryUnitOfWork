@@ -21,8 +21,6 @@ namespace Framework.EFCore
 
                 optionsBuilder.UseMySql(connection, ServerVersion.Create(8, 0, 18, ServerType.MySql));
             }
-
-          
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

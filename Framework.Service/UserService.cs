@@ -22,6 +22,8 @@ namespace Framework.Service
         }
         public List<UserEntity> GetAll()
         {
+            _userRepository.EntitiesAsNoTracking.First();
+
             var list = _userRepository.GetAll();
             return list;
         }

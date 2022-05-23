@@ -31,7 +31,8 @@ namespace NUnitTest
         [Test]
         public void Test_GetByID()
         {
-            var aaa = _userService.GetUserEntity(1);
+            var aaa = _userService.GetUserEntity(1); 
+
             Assert.True(aaa != null);
         }
 
