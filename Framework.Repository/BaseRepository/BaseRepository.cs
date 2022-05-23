@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using Framework.Core.Extensions;
+using Framework.UnitOfWork;
 
 namespace Framework.Repository
 {

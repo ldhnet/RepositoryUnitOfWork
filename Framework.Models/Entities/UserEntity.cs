@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Framework.EFCore.Models
+namespace Framework.Models.Entities
 {
     public class UserEntity
     { 

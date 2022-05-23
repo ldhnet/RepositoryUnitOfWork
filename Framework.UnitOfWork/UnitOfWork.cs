@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 using System.Data;
 using System.Reflection;
 
-namespace Framework.Repository
+namespace Framework.UnitOfWork
 { 
     public  class UnitOfWork : DefaultDbContext, IUnitOfWork
     { 

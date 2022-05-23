@@ -1,4 +1,5 @@
-﻿using Framework.EFCore.Models;
+﻿using Framework.Models.Entities;
+using Framework.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;

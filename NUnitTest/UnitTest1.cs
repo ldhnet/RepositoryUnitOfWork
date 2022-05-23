@@ -1,7 +1,7 @@
-using Framework.EFCore;
-using Framework.EFCore.Models;
+using Framework.Models.Entities;
 using Framework.Repository;
 using Framework.Service;
+using Framework.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 using System;

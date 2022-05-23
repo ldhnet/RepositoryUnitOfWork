@@ -1,4 +1,4 @@
-﻿using Framework.EFCore.Models;
+﻿using Framework.Models.Entities;
 using Framework.Repository;
 using System;
 using System.Collections.Generic;

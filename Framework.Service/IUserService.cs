@@ -1,4 +1,6 @@
-﻿using Framework.EFCore.Models;
+﻿
+
+using Framework.Models.Entities;
 
 namespace Framework.Service
 {

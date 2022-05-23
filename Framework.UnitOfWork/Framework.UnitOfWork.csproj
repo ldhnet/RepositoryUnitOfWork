@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Framework.EFCore\Framework.EFCore.csproj" />
-    <ProjectReference Include="..\Framework.Models\Framework.Models.csproj" />
-    <ProjectReference Include="..\Framework.Repository\Framework.Repository.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Framework.EFCore\Framework.EFCore.csproj" />
-    <ProjectReference Include="..\Framework.UnitOfWork\Framework.UnitOfWork.csproj" />
-  </ItemGroup>
-
 </Project>

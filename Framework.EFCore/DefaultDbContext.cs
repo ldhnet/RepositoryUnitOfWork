@@ -1,4 +1,4 @@
-﻿using Framework.EFCore.Models;
+﻿using Framework.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
