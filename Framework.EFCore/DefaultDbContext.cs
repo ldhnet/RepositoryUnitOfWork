@@ -17,7 +17,7 @@ namespace Framework.EFCore
         {
             if (!optionsBuilder.IsConfigured)
             { 
-                var connection = "server=rm-2zeetsz84h2ex0760ho.mysql.rds.aliyuncs.com;userid=root;pwd=Dsb0004699;port=3306;database=ldhdb;sslmode=none;Convert Zero Datetime=True";
+                var connection = "server=rm-2zeetsz84h2ex0760ho.mysql.rds.aliyuncs.com;userid=root;pwd=密码;port=3306;database=ldhdb;sslmode=none;Convert Zero Datetime=True";
 
                 optionsBuilder.UseMySql(connection, ServerVersion.Create(8, 0, 18, ServerType.MySql));
             }
