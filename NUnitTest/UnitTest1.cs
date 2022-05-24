@@ -1,37 +1,34 @@
-using Framework.Models.Entities;
-using Framework.Repository;
-using Framework.Service;
-using Framework.UnitOfWork;
-using Microsoft.EntityFrameworkCore;
+ using Framework.EFCore;
+using Framework.EFCore.Entities;
 using NUnit.Framework;
 using System;
+using System.Linq;
 
 namespace NUnitTest
 {
     public class Tests
     {
-
-        private IUserService _userService;
+         
         private UserRepository _userRepository;
         private IUnitOfWork _unitOfWork;
         [SetUp]
         public void Setup()
         { 
             _unitOfWork = new UnitOfWork();
-            _userRepository = new UserRepository(_unitOfWork);
-            _userService = new UserService(_userRepository);
+            _userRepository = new UserRepository(_unitOfWork); 
         }
 
         [Test]
         public void Test_GetAll()
         {
-            var aaa= _userService.GetAll();
+            var aaa= _userRepository.EntitiesAsNoTracking.ToList();
             Assert.Pass();
         }
         [Test]
         public void Test_GetByID()
         {
-            var aaa = _userService.GetUserEntity(1); 
+            var aaa = _userRepository.GetAll();
+            var bbb = _userRepository.GetFirstOrDefault(c=>c.Id == 1); 
 
             Assert.True(aaa != null);
         }
@@ -46,10 +43,10 @@ namespace NUnitTest
                 Email = "john@doe.com",
                 Password = "123",
             };
-            var aaa = _userService.Create(user);
+            var aaa = _userRepository.Insert(user);
 
 
-            var aaab = _userService.GetAll();
+            var aaab = _userRepository.GetAll();
 
             Assert.True(aaa != null);
         }
@@ -58,13 +55,13 @@ namespace NUnitTest
         public void Test_Update()
         {
            
-            var model = _userService.GetUserEntity(1);
+            var model = _userRepository.GetFirstOrDefault(c=>c.Id == 2);
 
             model.Email = "123@qq.com";
 
-            var aaa=  _userService.Edit(model);
+            var aaa= _userRepository.Update(model);
              
-            Assert.True(aaa);
+            Assert.True(aaa> 0);
         }
 
         [Test]
@@ -77,11 +74,11 @@ namespace NUnitTest
                 Email = "john@doe.com",
                 Password = "123",
             };
-            var aaa = _userService.Create(user);
+            var aaa = _userRepository.Insert(user);
 
-            var model = _userService.Delete(1); 
+            var model = _userRepository.Delete(1); 
 
-            Assert.True(aaa);
+            Assert.True(model > 0);
         }
     }
 }

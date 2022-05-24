@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Framework.EFCore;
-using Framework.Models.Entities;
+using Framework.EFCore.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
