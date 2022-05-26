@@ -1,13 +1,15 @@
-# AspDotNetDemo
+# Repository
+
 Generic EFCore6.0 Repository of UnitOfWork
 
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/ldhnet/RepositoryUnitOfWork.git
-git push -u origin main
- 
-git remote add origin https://github.com/ldhnet/RepositoryUnitOfWork.git
-git branch -M main
-git push -u origin main
+# 简介
+Entities 实体类
+
+UnitOfWork 工作单元 事务开启、提交、回滚
+
+DefaultDbContext.cs EF 链接数据库
+  
+IRepository.cs 仓储接口  
+
+Repository.cs 仓储实现
+
