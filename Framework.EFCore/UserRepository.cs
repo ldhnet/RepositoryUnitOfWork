@@ -1,5 +1,4 @@
-﻿using Framework.EFCore.Entities;
-using Framework.EFCore;
+﻿using Framework.EFCore.Entities; 
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Framework.EFCore
 {
-    public class UserRepository : BaseRepository<UserEntity, int>
+    public class UserRepository : BaseRepository<UserEntity, int>, IUserRepository
     {
         public UserRepository(IUnitOfWork unitOfWork) : base(unitOfWork) { } 
         public List<UserEntity> GetAll()

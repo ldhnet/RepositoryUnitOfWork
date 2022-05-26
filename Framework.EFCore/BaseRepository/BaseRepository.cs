@@ -1,18 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
-using Framework.EFCore.Extensions;
-using Framework.EFCore;
+using System.Linq.Expressions; 
 
 namespace Framework.EFCore
 {
-    public class BaseRepository<TEntity, TKey> where TEntity : class
+    public class BaseRepository<TEntity, TKey> : IBaseRepository<TEntity, TKey> where TEntity : class
     {
         private readonly DbSet<TEntity> _dbSet;
         private readonly IUnitOfWork _unitOfWork; 
         public BaseRepository(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            _dbSet = ((DbContext)unitOfWork).Set<TEntity>();
+            _dbSet = unitOfWork.CurrentDBContext.Set<TEntity>();
         }
         #region  Property
         /// <summary>
@@ -220,7 +218,7 @@ namespace Framework.EFCore
         public int Update(TEntity entity)
         { 
             AssignModifyProperty(entity);
-            ((DbContext)_unitOfWork).Update<TEntity, TKey>(entity);
+            _unitOfWork.CurrentDBContext.Update(entity);
             return SaveChanges();
         }
 
@@ -231,13 +229,7 @@ namespace Framework.EFCore
         private int SaveChanges()
         {
             return _unitOfWork.SaveChanges();
-        }
-
-        private async Task<int> SaveChangesAsync()
-        { 
-            return await _unitOfWork.SaveChangesAsync(default(CancellationToken));
-        }
-
+        } 
         /// <summary>
         /// 赋值CreateBy和CreateTime
         /// </summary>

@@ -1,4 +1,4 @@
- using Framework.EFCore;
+using Framework.EFCore;
 using Framework.EFCore.Entities;
 using NUnit.Framework;
 using System;
@@ -7,14 +7,14 @@ using System.Linq;
 namespace NUnitTest
 {
     public class Tests
-    {
-         
+    { 
         private UserRepository _userRepository;
         private IUnitOfWork _unitOfWork;
         [SetUp]
         public void Setup()
-        { 
-            _unitOfWork = new UnitOfWork();
+        {
+            DefaultDbContext  defaultDbContext = new DefaultDbContext();             
+            _unitOfWork = new UnitOfWork(defaultDbContext);              
             _userRepository = new UserRepository(_unitOfWork); 
         }
 
