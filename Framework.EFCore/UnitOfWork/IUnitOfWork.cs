@@ -12,7 +12,7 @@ namespace Framework.EFCore
     {
         #region 属性
 
-        DefaultDbContext CurrentDBContext { get; }
+        DbContext CurrentDBContext { get; }
 
         /// <summary>
         /// 获取 是否开启事务提交

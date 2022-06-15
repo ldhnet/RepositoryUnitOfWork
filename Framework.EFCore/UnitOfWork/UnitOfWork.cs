@@ -11,19 +11,19 @@ namespace Framework.EFCore
 {
     public class UnitOfWork: IUnitOfWork
     {
-        private readonly DefaultDbContext _context;
+        private readonly DbContext _context;
         /// <summary>
         /// The contructor requires an open DbContext to work with
         /// </summary>
         /// <param name="context">An open DataContext</param>
-        public UnitOfWork(DefaultDbContext context)
+        public UnitOfWork(DbContext context)
         {
             _context = context;
         }
         /// <summary>
         /// 获取 当前单元操作对象
         /// </summary>
-        public DefaultDbContext CurrentDBContext
+        public DbContext CurrentDBContext
         {
             get
             {
